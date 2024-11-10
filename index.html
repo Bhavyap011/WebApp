@@ -5,155 +5,164 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maintenance Request System</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
 
-        header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 15px 0;
-            text-align: center;
-        }
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 15px 0;
+    text-align: center;
+}
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
 
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-        }
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
 
-        main {
-            max-width: 90%;
-            margin: 20px auto;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
+main {
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
-        h1, h2, h3 {
-            color: #35424a;
-        }
+h1, h2, h3 {
+    color: #35424a;
+}
 
-        section {
-            display: none;
-            margin-bottom: 20px;
-        }
+section {
+    display: none;
+    margin-bottom: 20px;
+}
 
-        section.active {
-            display: block;
-        }
+section.active {
+    display: block;
+}
 
-        label {
-            display: block;
-            margin: 10px 0 5px;
-            font-weight: bold;
-        }
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
 
-        input[type="text"],
-        input[type="tel"],
-        input[type="email"],
-        input[type="date"],
-        select,
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-        }
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-sizing: border-box; /* Ensures padding is included in the total width */
+}
 
-        button {
-            background-color: #35424a;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
 
-        button:hover {
-            background-color: #4b5a63;
-        }
+button {
+    background-color: #35424a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-            overflow-x: auto;
-            min-width: 600px;
-        }
+button:hover {
+    background-color: #4b5a63;
+}
 
-        table, th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    overflow-x: auto;
+    min-width: 600px;
+}
 
-        th {
-            background-color: #ffffff;
-            color: rgb(0, 0, 0);
-        }
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
 
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
+th {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
 
-        tr:hover {
-            background-color: #ddd;
-        }
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
 
-        #manager-section {
-            padding: 20px;
-        }
+tr:hover {
+    background-color: #ddd;
+}
 
-        #tenant-table-container {
-            overflow-x: auto;
-        }
+/* Specific styles for the manager section */
+#manager-section {
+    padding: 20px;
+}
 
-        @media (max-width: 768px) {
-            nav ul li {
-                display: block;
-                margin: 5px 0;
-            }
 
-            main {
-                padding: 15px;
-            }
+#tenant-management-form h3 {
+    margin-top: 0;
+}
 
-            table, th, td {
-                font-size: 14px;
-                padding: 8px;
-            }
-        }
+#tenant-table-container {
+    overflow-x: auto;
+}
 
-        footer {
-            text-align: center;
-            padding: 15px 0;
-            background: #35424a;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #35424a;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
     </style>
 </head>
 <body>
@@ -161,7 +170,7 @@
         <h1>Maintenance Request System</h1>
         <nav>
             <ul>
-                <li><a href="#" onclick="showSection('tenant-section')">Maintenance Form</a></li>
+                <li><a href="#" onclick="showSection('tenant-section')">Maintenance Form </a></li>
                 <li><a href="#" onclick="showSection('staff-section')">Staff Section</a></li>
                 <li><a href="#" onclick="showSection('manager-section')">Manager Section</a></li>
             </ul>
@@ -169,6 +178,7 @@
     </header>
 
     <main>
+        <!-- Tenant Section -->
         <section id="tenant-section" class="active">
             <h2>Tenant: Submit Maintenance Request</h2>
             <form id="maintenance-request-form">
@@ -191,9 +201,10 @@
             </form>
         </section>
 
+        <!-- Staff Section -->
         <section id="staff-section">
             <h2>Staff: Browse Maintenance Requests</h2>
-            <form id="filter-form">
+            <form id="filter-form" onsubmit="applyFilters(event)">
                 <label for="filter-apartment-number">Filter by Apartment Number:</label>
                 <input type="text" id="filter-apartment-number">
 
@@ -233,10 +244,13 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                    <!-- Rows will be populated with JavaScript -->
+                </tbody>
             </table>
         </section>
 
+        <!-- Manager Section -->
         <section id="manager-section">
             <h2>Manager: Manage Tenants</h2>
             <form id="tenant-management-form">
@@ -261,6 +275,7 @@
 
                 <button type="submit">Add Tenant</button>
             </form>
+    
 
             <h3>Move or Delete Tenant</h3>
             <label for="tenant-id">Tenant ID:</label>
@@ -274,19 +289,21 @@
 
             <h3>Tenant List</h3>
             <table id="tenant-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>Check-in Date</th>
-                        <th>Check-out Date</th>
-                        <th>Apartment Number</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+            <thead>
+                <tr>
+                 <th>ID</th>
+                 <th>Name</th>
+                 <th>Phone</th>
+                 <th>Email</th>
+                 <th>Check-in Date</th>
+                 <th>Check-out Date</th>
+                 <th>Apartment Number</th>
+                </tr>
+            </thead>
+        <tbody>
+            <!-- Rows will be populated dynamically with JavaScript -->
+        </tbody>
+    </table>
         </section>
     </main>
 
@@ -295,11 +312,9 @@
     </footer>
 
     <script type="module">
-        // Firebase setup - REMEMBER TO REMOVE API KEYS BEFORE PUSHING TO PROD!
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
         import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, where, updateDoc } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
-
-        // TODO: Move this to environment variables before deployment
+    
         const firebaseConfig = {
             apiKey: "AIzaSyCd19lPR9u7xh0T1fHdsSbE9peW7uZXzNc",
             authDomain: "maintenance-request-849cd.firebaseapp.com",
@@ -309,160 +324,250 @@
             appId: "1:767023579598:web:281dd288b57a2c4861eb9f",
             measurementId: "G-YY5L2962LW"
         };
-
+    
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
-
-        // Handles switching between different sections (tenant, staff, manager views)
-        // Also saves last active section to localStorage for better UX
-        window.showSection = function(sectionId) {
-            document.querySelectorAll("main > section").forEach(section => section.classList.remove("active"));
-            document.getElementById(sectionId).classList.add("active");
+    
+        // Function to show sections and save the active section to local storage
+        window.showSection = function (sectionId) {
+            const sections = document.querySelectorAll("main > section");
+            sections.forEach(section => section.classList.remove("active"));
+            const activeSection = document.getElementById(sectionId);
+            activeSection.classList.add("active");
+    
+            // Save the active section to local storage
             localStorage.setItem("activeSection", sectionId);
         };
-
-        // Restore last active section on page load
+    
+        // Restore the active section from local storage after page reload
         window.addEventListener("load", () => {
-            showSection(localStorage.getItem("activeSection") || "tenant-section");
+            const activeSectionId = localStorage.getItem("activeSection") || "tenant-section";
+            showSection(activeSectionId);
         });
-
-        // Fetches and displays all maintenance requests in the staff view
-        // Each request gets a "Complete" button that updates its status
-        async function loadRequests() {
-            const requestsTable = document.querySelector("#requests-table tbody");
-            requestsTable.innerHTML = "";
-
-            const requestsSnapshot = await getDocs(collection(db, "maintenanceRequests"));
-            requestsSnapshot.forEach((doc) => {
-                // Table population logic remains unchanged
-            });
-        }
-
-        // Loads all tenant data into the manager view table
-        async function loadTenants() {
-            const tenantTableBody = document.querySelector("#tenant-table tbody");
-            tenantTableBody.innerHTML = "";
-
-            const tenantsSnapshot = await getDocs(collection(db, "tenants"));
-            tenantsSnapshot.forEach((doc) => {
-                // Table population logic remains unchanged
-            });
-        }
-
-        // Handles the filtering system in staff view
-        // Can filter by apartment, area, and request status
-        async function applyFilters() {
-            const apartmentNumber = document.getElementById('filter-apartment-number').value;
-            const area = document.getElementById('filter-area').value;
-            const status = document.getElementById('filter-status').value;
-
-            // Build query based on selected filters
-            let q = query(collection(db, "maintenanceRequests"));
-            if (apartmentNumber) q = query(q, where("apartmentNumber", "==", apartmentNumber));
-            if (area) q = query(q, where("problemArea", "==", area));
-            if (status) q = query(q, where("status", "==", status));
-
-            // Rest of filtering logic remains unchanged
-        }
-
-        // FORM HANDLERS
-
-        // Handles new maintenance request submission from tenants
-        document.getElementById('maintenance-request-form').addEventListener('submit', async (e) => {
+    
+        const maintenanceRequestForm = document.getElementById('maintenance-request-form');
+        maintenanceRequestForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+            const apartmentNumber = document.getElementById('apartment-number').value;
+            const problemArea = document.getElementById('problem-area').value;
+            const problemDescription = document.getElementById('problem-description').value;
+            const date = new Date();
+    
             try {
-                // Creates new maintenance request doc in Firebase
                 await addDoc(collection(db, "maintenanceRequests"), {
-                    apartmentNumber: document.getElementById('apartment-number').value,
-                    problemArea: document.getElementById('problem-area').value,
-                    problemDescription: document.getElementById('problem-description').value,
-                    date: new Date(),
+                    apartmentNumber: apartmentNumber,
+                    problemArea: problemArea,
+                    problemDescription: problemDescription,
+                    date: date,
                     status: "pending"
                 });
                 alert("Request submitted successfully!");
-                e.target.reset();
+                maintenanceRequestForm.reset();
                 loadRequests();
             } catch (e) {
                 console.error("Error adding document: ", e);
             }
         });
-
-        // Handles new tenant registration in manager view
-        document.getElementById('tenant-management-form').addEventListener('submit', async (e) => {
+    
+        async function loadRequests() {
+            const requestsTable = document.querySelector("#requests-table tbody");
+            requestsTable.innerHTML = ""; // Clear existing rows
+    
+            const requestsSnapshot = await getDocs(collection(db, "maintenanceRequests"));
+            requestsSnapshot.forEach((doc) => {
+                const data = doc.data();
+                const row = requestsTable.insertRow();
+                row.insertCell(0).innerText = doc.id;
+                row.insertCell(1).innerText = data.apartmentNumber;
+                row.insertCell(2).innerText = data.problemArea;
+                row.insertCell(3).innerText = data.problemDescription;
+                row.insertCell(4).innerText = data.date.toDate().toLocaleString();
+                row.insertCell(5).innerText = data.status;
+    
+                const actionCell = row.insertCell(6);
+                const completeButton = document.createElement("button");
+                completeButton.innerText = "Complete";
+                completeButton.onclick = async () => {
+                    try {
+                        await updateDoc(doc.ref, { status: "completed" });
+                        alert("Request marked as completed!");
+                        loadRequests();
+                    } catch (e) {
+                        console.error("Error updating document: ", e);
+                    }
+                };
+                actionCell.appendChild(completeButton);
+            });
+        }
+    
+        loadRequests();
+    
+        const filterForm = document.getElementById('filter-form');
+        filterForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            try {
-                // Creates new tenant doc in Firebase
-                await addDoc(collection(db, "tenants"), {
-                    name: document.getElementById('tenant-name').value,
-                    phone: document.getElementById('tenant-phone').value,
-                    email: document.getElementById('tenant-email').value,
-                    checkInDate: document.getElementById('check-in-date').value,
-                    checkOutDate: document.getElementById('check-out-date').value,
-                    apartmentNumber: document.getElementById('tenant-apartment-number').value
-                });
+            applyFilters();
+        });
+        async function applyFilters() {
+            const apartmentNumber = document.getElementById('filter-apartment-number').value;
+            const area = document.getElementById('filter-area').value;
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+            const status = document.getElementById('filter-status').value;
+
+            const requestsTable = document.querySelector("#requests-table tbody");
+            requestsTable.innerHTML = ""; 
+
+            const requestsRef = collection(db, "maintenanceRequests");
+            let q = query(requestsRef);
+            if (apartmentNumber) {
+                q = query(q, where("apartmentNumber", "==", apartmentNumber));
+            }
+            if (area) {
+                q = query(q, where("problemArea", "==", area));
+            }
+            if (status) {
+                q = query(q, where("status", "==", status));
+            }
+
+            const requestsSnapshot = await getDocs(q);
+            requestsSnapshot.forEach((doc) => {
+                const data = doc.data();
+                const row = requestsTable.insertRow();
+                row.insertCell(0).innerText = doc.id;
+                row.insertCell(1).innerText = data.apartmentNumber;
+                row.insertCell(2).innerText = data.problemArea;
+                row.insertCell(3).innerText = data.problemDescription;
+                row.insertCell(4).innerText = data.date.toDate().toLocaleString();
+                row.insertCell(5).innerText = data.status;
+
+                const actionCell = row.insertCell(6);
+                const completeButton = document.createElement("button");
+                completeButton.innerText = "Complete";
+                completeButton.onclick = async () => {
+                    try {
+                        await updateDoc(doc.ref, { status: "completed" });
+                        alert("Request marked as completed!");
+                        loadRequests();
+                    } catch (e) {
+                        console.error("Error updating document: ", e);
+                    }
+                };
+                actionCell.appendChild(completeButton);
+            });
+        }
+
+        const tenantManagementForm = document.getElementById('tenant-management-form');
+
+            // Add tenant data to Firestore on form submission
+            tenantManagementForm.addEventListener('submit', async (e) => {
+             e.preventDefault();
+            const tenantName = document.getElementById('tenant-name').value;
+            const tenantPhone = document.getElementById('tenant-phone').value;
+            const tenantEmail = document.getElementById('tenant-email').value;
+            const checkInDate = document.getElementById('check-in-date').value;
+            const checkOutDate = document.getElementById('check-out-date').value;
+            const apartmentNumber = document.getElementById('tenant-apartment-number').value;
+
+        try {
+             await addDoc(collection(db, "tenants"), {
+                name: tenantName,
+                phone: tenantPhone,
+                email: tenantEmail,
+                checkInDate: checkInDate,
+                checkOutDate: checkOutDate,
+                apartmentNumber: apartmentNumber
+            });
                 alert("Tenant added successfully!");
-                e.target.reset();
-                loadTenants();
+                tenantManagementForm.reset();
+                loadTenants(); 
                 location.reload();
             } catch (e) {
                 console.error("Error adding tenant: ", e);
             }
         });
 
-        // Handles moving tenant to new apartment
-        // FIXME: Should probably add validation to check if new apartment is available
-        document.getElementById('move-tenant-button').onclick = async () => {
-            const tenantId = document.getElementById('tenant-id').value;
-            const newApartmentNumber = document.getElementById('new-apartment-number').value;
+        // Function to load and display tenants in the tenant table
+            async function loadTenants() {
+        const tenantTableBody = document.querySelector("#tenant-table tbody");
+            tenantTableBody.innerHTML = ""; 
+
+        const tenantsSnapshot = await getDocs(collection(db, "tenants"));
+            tenantsSnapshot.forEach((doc) => {
+            const data = doc.data();
+            const row = tenantTableBody.insertRow();
+            row.insertCell(0).innerText = doc.id;
+            row.insertCell(1).innerText = data.name;
+            row.insertCell(2).innerText = data.phone;
+            row.insertCell(3).innerText = data.email;
+            row.insertCell(4).innerText = data.checkInDate;
+            row.insertCell(5).innerText = data.checkOutDate;
+            row.insertCell(6).innerText = data.apartmentNumber;
+        });
+    }
+loadTenants();
+
+            // Reference to the move tenant button
+        const moveTenantButton = document.getElementById('move-tenant-button');
+            moveTenantButton.onclick = async () => {
+        const tenantId = document.getElementById('tenant-id').value;
+        const newApartmentNumber = document.getElementById('new-apartment-number').value;
 
             if (!tenantId || !newApartmentNumber) {
                 alert("Please enter both tenant ID and new apartment number.");
-                return;
-            }
+            return;
+        }
+        try {
+        // Reference to the tenant document in the Firestore collection
+        const tenantRef = doc(db, "tenants", tenantId);
 
-            try {
-                const tenantRef = doc(db, "tenants", tenantId);
-                await updateDoc(tenantRef, {
-                    apartmentNumber: newApartmentNumber
-                });
-                alert("Tenant's apartment number updated successfully!");
-                document.getElementById('tenant-id').value = '';
-                document.getElementById('new-apartment-number').value = '';
-                loadTenants();
-                location.reload();
-            } catch (e) {
-                console.error("Error updating tenant's apartment number: ", e);
-                alert("An error occurred while updating the apartment number. Please check if the tenant ID is correct.");
-            }
-        };
+        // Update the apartment number in the database
+        await updateDoc(tenantRef, {
+            apartmentNumber: newApartmentNumber
+        });
 
-        // WARNING: This permanently deletes tenant and their maintenance requests
-        // Maybe should add an archive feature instead?
-        document.getElementById('delete-tenant-button').onclick = async () => {
-            const tenantId = document.getElementById('tenant-id').value;
+        alert("Tenant's apartment number updated successfully!");
+            // Clear the input fields
+            document.getElementById('tenant-id').value = '';
+            document.getElementById('new-apartment-number').value = '';
+        
+            // Reload the tenant list to show the updated information
+            loadTenants();
+            location.reload();
+        } catch (e) {
+            console.error("Error updating tenant's apartment number: ", e);
+        alert("An error occurred while updating the apartment number. Please check if the tenant ID is correct.");
+    }
+};
 
-            if (!tenantId) {
-                alert("Please enter a tenant ID to delete.");
-                return;
-            }
+        const deleteTenantButton = document.getElementById('delete-tenant-button');
+            deleteTenantButton.onclick = async () => {
+        const tenantId = document.getElementById('tenant-id').value;
 
-            try {
-                const tenantRef = doc(db, "maintenanceRequests", tenantId);
-                const tenantRef2 = doc(db, "tenants", tenantId);
-                await deleteDoc(tenantRef);
-                await deleteDoc(tenantRef2);
-                alert("Tenant deleted successfully!");
-                loadRequests();
-                location.reload();
-            } catch (e) {
-                console.error("Error deleting tenant: ", e);
-                alert("An error occurred while deleting the tenant.");
-            }
-        };
+        if (!tenantId) {
+            alert("Please enter a tenant ID to delete.");
+        return;
+    }
 
-        // Initial data load
-        loadRequests();
-        loadTenants();
+        try {
+        // Reference to the tenant document in the Firestore collection
+        const tenantRef = doc(db, "maintenanceRequests", tenantId);
+        const tenantRef2 = doc(db, "tenants", tenantId);
+
+        // Delete the tenant document
+        await deleteDoc(tenantRef);
+        await deleteDoc(tenantRef2);
+
+        alert("Tenant deleted successfully!");
+
+        // After deleting the tenant, refresh the maintenance requests list
+        loadRequests();  
+        location.reload();
+    } catch (e) {
+        console.error("Error deleting tenant: ", e);
+        alert("An error occurred while deleting the tenant.");
+    }
+};
+
     </script>
 </body>
 </html>
